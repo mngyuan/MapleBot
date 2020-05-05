@@ -17,8 +17,8 @@ class MapleChar(KeyLocations):
         super().__init__()
         self.start_time = time.time()
         self.direction = 'right'
-        self.health_img = os.path.abspath('assets\health.png')
-        self.mana_img = os.path.abspath('assets\mana.png')
+        self.health_img = os.path.abspath('assets/health.png')
+        self.mana_img = os.path.abspath('assets/mana.png')
         self.potion_count = 0
         
     #Character movement

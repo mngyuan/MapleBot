@@ -18,13 +18,13 @@ class KeyLocations():
         os_version = ' '.join(os_version)
         #os_version = 'Windows 7'
         #os_version = 'Windows 10'
-        osk_filepath = os.path.abspath(r'assets\osk\{}'.format(os_version))
-        logging.info("Looking for On-Screen Keyboard")
+        osk_filepath = os.path.abspath(r'assets/osk/{}'.format(os_version))
+        logging.info("Looking for On-Screen Keyboard for " + os_version)
         osk_icon = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'OSK_ICON.png'))
         if not osk_icon:
             sys.exit("Unable to detect On-Screen Keyboard")
         logging.info("On-Screen keyboard detected.")
-        OSK_LOCATION = (osk_icon[0] - 25, osk_icon[1], 1000, 500)
+        OSK_LOCATION = (osk_icon[0] - 25, osk_icon[1], 1500, 800)
         logging.info('Starting key mapping')
         self.Q = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'Q.png'), region=OSK_LOCATION, grayscale=True)
         self.W = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'W.png'), region=OSK_LOCATION, grayscale=True)
@@ -58,18 +58,33 @@ class KeyLocations():
         self.M = (self.N[0] + pixel_space, self.Z[1])
         #
         self.ESC = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'ESC.png'), region=OSK_LOCATION, grayscale=True)
-        #Starting from Tilda for Windows 7 compatability 
-        self.TILDA = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'TILDA.png'), region=OSK_LOCATION, grayscale=True)
-        self.ONE = (self.TILDA[0] + pixel_space, self.ESC[1])
-        self.TWO = (self.ONE[0] + pixel_space, self.ESC[1])
-        self.THREE = (self.TWO[0] + pixel_space, self.ESC[1])
-        self.FOUR = (self.THREE[0] + pixel_space, self.ESC[1])
-        self.FIVE = (self.FOUR[0] + pixel_space, self.ESC[1])
-        self.SIX = (self.FIVE[0] + pixel_space, self.ESC[1])
-        self.SEVEN = (self.SIX[0] + pixel_space, self.ESC[1])
-        self.EIGHT = (self.SEVEN[0] + pixel_space, self.ESC[1])
-        self.NINE = (self.EIGHT[0] + pixel_space, self.ESC[1])
-        self.ZERO = (self.NINE[0] + pixel_space, self.ESC[1])
+        if 'Darwin' in os_version:
+            # MacOS ESC row is different from the Windows one
+            self.TILDA = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'TILDA.png'), region=OSK_LOCATION, grayscale=True)
+            self.ONE = (self.TILDA[0] + pixel_space, self.TILDA[1])
+            self.TWO = (self.ONE[0] + pixel_space, self.TILDA[1])
+            self.THREE = (self.TWO[0] + pixel_space, self.TILDA[1])
+            self.FOUR = (self.THREE[0] + pixel_space, self.TILDA[1])
+            self.FIVE = (self.FOUR[0] + pixel_space, self.TILDA[1])
+            self.SIX = (self.FIVE[0] + pixel_space, self.TILDA[1])
+            self.SEVEN = (self.SIX[0] + pixel_space, self.TILDA[1])
+            self.EIGHT = (self.SEVEN[0] + pixel_space, self.TILDA[1])
+            self.NINE = (self.EIGHT[0] + pixel_space, self.TILDA[1])
+            self.ZERO = (self.NINE[0] + pixel_space, self.TILDA[1])
+        else:
+            self.ESC = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'ESC.png'), region=OSK_LOCATION, grayscale=True)
+            #Starting from Tilda for Windows 7 compatability 
+            self.TILDA = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'TILDA.png'), region=OSK_LOCATION, grayscale=True)
+            self.ONE = (self.TILDA[0] + pixel_space, self.ESC[1])
+            self.TWO = (self.ONE[0] + pixel_space, self.ESC[1])
+            self.THREE = (self.TWO[0] + pixel_space, self.ESC[1])
+            self.FOUR = (self.THREE[0] + pixel_space, self.ESC[1])
+            self.FIVE = (self.FOUR[0] + pixel_space, self.ESC[1])
+            self.SIX = (self.FIVE[0] + pixel_space, self.ESC[1])
+            self.SEVEN = (self.SIX[0] + pixel_space, self.ESC[1])
+            self.EIGHT = (self.SEVEN[0] + pixel_space, self.ESC[1])
+            self.NINE = (self.EIGHT[0] + pixel_space, self.ESC[1])
+            self.ZERO = (self.NINE[0] + pixel_space, self.ESC[1])
         #
         self.ALT = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'ALT.png'), region=OSK_LOCATION, grayscale=True)
         self.CTRL = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'CTRL.png'), region=OSK_LOCATION, grayscale=True)

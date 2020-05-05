@@ -18,7 +18,7 @@ class KeyLocations():
         os_version = ' '.join(os_version)
         #os_version = 'Windows 7'
         #os_version = 'Windows 10'
-        osk_filepath = os.path.abspath(r'assets\osk\{}'.format(os_version))
+        osk_filepath = os.path.abspath(r'assets/osk/{}'.format(os_version))
         logging.info("Looking for On-Screen Keyboard")
         osk_icon = pyautogui.locateCenterOnScreen(os.path.join(osk_filepath, 'OSK_ICON.png'))
         if not osk_icon:
