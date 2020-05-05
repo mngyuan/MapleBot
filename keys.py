@@ -75,11 +75,11 @@ class KeyLocations:
         self.ESC = pyautogui.locateCenterOnScreen(
             os.path.join(osk_filepath, "ESC.png"), region=OSK_LOCATION, grayscale=True
         )
-        # Starting from Tilda for Windows 7 compatability
-        self.TILDA = pyautogui.locateCenterOnScreen(
-            os.path.join(osk_filepath, "TILDA.png"), region=OSK_LOCATION, grayscale=True
+        # Starting from Tilde for Windows 7 compatability
+        self.TILDE = pyautogui.locateCenterOnScreen(
+            os.path.join(osk_filepath, "TILDE.png"), region=OSK_LOCATION, grayscale=True
         )
-        self.ONE = (self.TILDA[0] + pixel_space, self.ESC[1])
+        self.ONE = (self.TILDE[0] + pixel_space, self.ESC[1])
         self.TWO = (self.ONE[0] + pixel_space, self.ESC[1])
         self.THREE = (self.TWO[0] + pixel_space, self.ESC[1])
         self.FOUR = (self.THREE[0] + pixel_space, self.ESC[1])

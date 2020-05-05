@@ -77,34 +77,34 @@ class KeyLocations:
         )
         if "Darwin" in os_version:
             # MacOS ESC row is different from the Windows one
-            self.TILDA = pyautogui.locateCenterOnScreen(
-                os.path.join(osk_filepath, "TILDA.png"),
+            self.TILDE = pyautogui.locateCenterOnScreen(
+                os.path.join(osk_filepath, "TILDE.png"),
                 region=OSK_LOCATION,
                 grayscale=True,
             )
-            self.ONE = (self.TILDA[0] + pixel_space, self.TILDA[1])
-            self.TWO = (self.ONE[0] + pixel_space, self.TILDA[1])
-            self.THREE = (self.TWO[0] + pixel_space, self.TILDA[1])
-            self.FOUR = (self.THREE[0] + pixel_space, self.TILDA[1])
-            self.FIVE = (self.FOUR[0] + pixel_space, self.TILDA[1])
-            self.SIX = (self.FIVE[0] + pixel_space, self.TILDA[1])
-            self.SEVEN = (self.SIX[0] + pixel_space, self.TILDA[1])
-            self.EIGHT = (self.SEVEN[0] + pixel_space, self.TILDA[1])
-            self.NINE = (self.EIGHT[0] + pixel_space, self.TILDA[1])
-            self.ZERO = (self.NINE[0] + pixel_space, self.TILDA[1])
+            self.ONE = (self.TILDE[0] + pixel_space, self.TILDE[1])
+            self.TWO = (self.ONE[0] + pixel_space, self.TILDE[1])
+            self.THREE = (self.TWO[0] + pixel_space, self.TILDE[1])
+            self.FOUR = (self.THREE[0] + pixel_space, self.TILDE[1])
+            self.FIVE = (self.FOUR[0] + pixel_space, self.TILDE[1])
+            self.SIX = (self.FIVE[0] + pixel_space, self.TILDE[1])
+            self.SEVEN = (self.SIX[0] + pixel_space, self.TILDE[1])
+            self.EIGHT = (self.SEVEN[0] + pixel_space, self.TILDE[1])
+            self.NINE = (self.EIGHT[0] + pixel_space, self.TILDE[1])
+            self.ZERO = (self.NINE[0] + pixel_space, self.TILDE[1])
         else:
             self.ESC = pyautogui.locateCenterOnScreen(
                 os.path.join(osk_filepath, "ESC.png"),
                 region=OSK_LOCATION,
                 grayscale=True,
             )
-            # Starting from Tilda for Windows 7 compatability
-            self.TILDA = pyautogui.locateCenterOnScreen(
-                os.path.join(osk_filepath, "TILDA.png"),
+            # Starting from Tilde for Windows 7 compatability
+            self.TILDE = pyautogui.locateCenterOnScreen(
+                os.path.join(osk_filepath, "TILDE.png"),
                 region=OSK_LOCATION,
                 grayscale=True,
             )
-            self.ONE = (self.TILDA[0] + pixel_space, self.ESC[1])
+            self.ONE = (self.TILDE[0] + pixel_space, self.ESC[1])
             self.TWO = (self.ONE[0] + pixel_space, self.ESC[1])
             self.THREE = (self.TWO[0] + pixel_space, self.ESC[1])
             self.FOUR = (self.THREE[0] + pixel_space, self.ESC[1])

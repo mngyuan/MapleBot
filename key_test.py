@@ -51,7 +51,7 @@ class key_test(KeyLocations):
             p.moveTo(self.DOWN)
         if row is "ESC" or row is "numbers" or row is "all":
             p.moveTo(self.ESC)
-            p.moveTo(self.TILDA)
+            p.moveTo(self.TILDE)
             p.moveTo(self.ONE)
             p.moveTo(self.TWO)
             p.moveTo(self.THREE)

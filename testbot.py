@@ -36,7 +36,7 @@ class TestBot(MapleChar):
 def main():
     test_bot = TestBot()
     test_keys = [
-        test_bot.TILDA,
+        test_bot.TILDE,
         test_bot.ONE,
         test_bot.ZERO,
         test_bot.Q,
